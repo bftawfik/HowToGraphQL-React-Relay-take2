@@ -257,7 +257,22 @@ Note: <em> You should change to <b>hacknews</b> directory first.</em>
 
 This will let you see the project configuration files
 
+<br/>
 
+**14. Add the relay blugin configuration**
+
+In the <code>package.json</code> file update this lines
+
+    "babel": {
+      "presets": [
+        "react-app"
+      ],
+      "plugins": [
+        "relay"
+      ]
+    },
+
+<br/>
 
 
 
