@@ -76,10 +76,12 @@ Next copy the content of schema to the <b><em>graphcool/types.graphql</em></b> .
 to change to graphcool directory.
 
 <code>$ graphcool deploy --new-service [put your Service name here]</code>
+<code>$ graphcool deploy --new-service Hackernews</code>
 
 or
 
 <code>$ graphcool deploy -n [put your Service name here]</code>
+<code>$ graphcool deploy -n Hackernews</code>
 
 CLI will prompt you to select the Cluster and afterwards initialise the project.
 
