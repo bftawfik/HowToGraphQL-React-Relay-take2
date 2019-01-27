@@ -274,6 +274,61 @@ In the <code>package.json</code> file update this lines
 
 <br/>
 
+**15. Creating environment**
+
+* Create the <code>Environment.js</code> in the <code>src</code> folder and add this code to it
+
+      // 1
+      const {
+        Environment,
+        Network,
+        RecordSource,
+        Store,
+      } = require('relay-runtime')
+
+      // 2
+      const store = new Store(new RecordSource())
+
+      // 3
+      const network = Network.create((operation, variables) => {
+        // 4
+        return fetch('__RELAY_API_ENDPOINT__', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            query: operation.text,
+            variables,
+          }),
+        }).then(response => {
+          return response.json()
+        })
+      })
+
+      // 5
+      const environment = new Environment({
+        network,
+        store,
+      })
+
+      // 6
+      export default environment
+
+* Understand the steps here:
+
+  1. You first import the required JS modules that you need to instantiate and configure the Environment.
+
+  2. Here you instantiate the required Store that will store the cached data.
+
+  3. Now you create a Network that knows your GraphQL server from before, it’s instantiated with a function that returns a Promise of a networking call to the GraphQL API - here that’s done using fetch.
+
+  4. The Network needs to know the server endpoint for your API. In the next step, you’ll replace the placeholder __RELAY_API_ENDPOINT__ with your actual endpoint.
+
+  5. With the store and network available you can instantiate the actual Environment.
+
+  6. Lastly you need to export the environment from this module.
 
 
 
