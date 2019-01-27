@@ -2,6 +2,10 @@
 
 This is a guide that help to use graph.cool with Relay
 
+I used this page as a guide
+
+    https://www.howtographql.com/react-relay/1-getting-started/
+
 **1. Create new React Project**
 
 <code>$ yarn create react-app hackernews</code>
@@ -140,9 +144,92 @@ Add this in a new tab in the graphcool playground
 
 **9. Change the project hierarchy and the css from this link**
 
-    https://www.howtographql.com/react-relay/1-getting-started/
+* Add a <code>components</code> and <code>styles</code> folders inside the <code>src</code> folder
 
-<br/>
+* Move the <code>App.js</code> file inside <code>components</code> folder.
+
+* Move the <code>App.css</code> file inside <code>styles</code> folder.
+
+      .
+      ├── README.md
+      ├── node_modules
+      ├── graphcool
+      ├── package.json
+      ├── public
+      │   ├── favicon.ico
+      │   ├── index.html
+      │   └── ma nifest.json
+      ├── src
+      │   ├── App.test.js
+      │   ├── components
+      │   │   └── App.js
+      │   ├── index.js
+      │   ├── index.css
+      │   ├── logo.svg
+      │   ├── serviceWorker.js
+      │   └── styles
+      │       └── App.css
+      └── yarn.lock
+
+This is what we end up with
+
+* Update this line in the index.js file
+
+      import App from './components/App';
+
+* Update this line in the App.js file
+
+      import '../styles/App.css';
+
+* Add this line to the index.html file
+
+      <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+
+* Replace the code in the index.css file
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, Geneva, sans-serif;
+      }
+
+      input {
+        max-width: 500px;
+      }
+
+      .gray {
+        color: #828282;
+      }
+
+      .orange {
+        background-color: #ff6600;
+      }
+
+      .background-gray {
+        background-color: rgb(246,246,239);
+      }
+
+      .f11 {
+        font-size: 11px;
+      }
+
+      .w85 {
+        width: 85%;
+      }
+
+      .button {
+        font-family: monospace;
+        font-size: 10pt;
+        color: black;
+        background-color: buttonface;
+        text-align: center;
+        padding: 2px 6px 3px;
+        border-width: 2px;
+        border-style: outset;
+        border-color: buttonface;
+        cursor: pointer;
+        max-width: 250px;
+      }
 
 **10. Install react-relay**
 
