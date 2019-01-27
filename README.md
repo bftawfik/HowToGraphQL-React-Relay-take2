@@ -235,6 +235,8 @@ This is what we end up with
 
 Note: <em> You should change to <b>hacknews</b> directory first.</em>
 
+    $ cd ..
+
     $ yarn add react-relay
 
 <br/>
@@ -330,7 +332,58 @@ In the <code>package.json</code> file update this lines
 
   6. Lastly you need to export the environment from this module.
 
+* navigate to the <code>graphcool</code> folder
 
+      $ cd graphcool
+
+* Run this command
+
+      $ graphcool info
+  this will show you all the end points
+
+* <b>Copy</b> the line in front of <code>Relay</code> into the <code>Environment.js</code> file, replace the placeholder <code>____RELAY_API_ENDPOINT\___</code>
+
+<br/>
+
+**16. Download the schema to local file**
+
+Note: <em>Be sure you still in the <code> graphcool</code> folder</em>
+
+* Install the <code>graphql-cli</code>
+
+      $ npm install -g graphql-cli
+
+* Run this command to create the <code>.graphqlconfig</code> file
+
+      $ graphql init
+
+* It will ask you for some data about the project
+
+  1. Project name: <code>Hackernews</code>
+  2. Schema file path: <code>schema.graphql</code>
+  3. Endpoint URL: <code>https://api.graph.cool/relay/v1/cjreosu0f541a0194saplq1is</code>
+  4. Endpoint name: <code>relay</code>
+  5. Subscription URL: <code>(Enter to skip)</code>
+  6. Add another: <code>No</code>
+  7. File format: <code>JSON</code>
+
+
+          {
+            "projects": {
+              "Hackernews": {
+                "schemaPath": "schema.graphql",
+                "extensions": {
+                  "endpoints": {
+                    "relay": "https://api.graph.cool/relay/v1/cjreosu0f541a0194saplq1is"
+                  }
+                }
+              }
+            }
+          }
+
+* Now, to get the schema in local files
+
+      $ graphql get-schema
 
 .  
 .  
