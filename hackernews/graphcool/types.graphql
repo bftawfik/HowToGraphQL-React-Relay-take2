@@ -1,5 +1,6 @@
 type Link @model {
   id: ID! @isUnique
+  createdAt: DateTime!
   url: String!
   description: String!
   postedBy: User @relation(name: "UsersLinks")

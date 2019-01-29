@@ -253,7 +253,11 @@ Note: <em> You should change to <b>hacknews</b> directory first.</em>
 
 <br/>
 
-**13. Eject the React app**
+**13. Install the graphql**
+
+    $ yarn add --dev graphql
+
+**14. Eject the React app**
 
     $ yarn eject
 
@@ -261,7 +265,7 @@ This will let you see the project configuration files
 
 <br/>
 
-**14. Add the relay blugin configuration**
+**15. Add the relay blugin configuration**
 
 In the <code>package.json</code> file update this lines
 
@@ -276,7 +280,7 @@ In the <code>package.json</code> file update this lines
 
 <br/>
 
-**15. Creating environment**
+**16. Creating environment**
 
 * Create the <code>Environment.js</code> in the <code>src</code> folder and add this code to it
 
@@ -345,7 +349,7 @@ In the <code>package.json</code> file update this lines
 
 <br/>
 
-**16. Download the schema to local file**
+**17. Download the schema to local file**
 
 Note: <em>Be sure you still in the <code> graphcool</code> folder</em>
 
